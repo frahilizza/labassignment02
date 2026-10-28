@@ -1,0 +1,112 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #0a0a0a;
+    background: #fff;
+}
+
+/* ---------- Header (centered) ---------- */
+header {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 14px 20px;
+    text-align: center;
+}
+
+header h1 { margin: 0; font-size: 24px; }
+header p  { margin: 4px 0 0; color: #bbb; }
+
+/* ---------- Buttons and inputs ---------- */
+button, input, select, textarea {
+    font-size: 14px;
+    padding: 8px;
+    font-family: inherit;
+}
+
+input, select, textarea {
+    border: 1px solid #0a0a0a;
+    background: #fff;
+    color: #0a0a0a;
+}
+
+button {
+    border: 1px solid #0a0a0a;
+    background: #fff;
+    color: #0a0a0a;
+    cursor: pointer;
+}
+button:hover { background: #0a0a0a; color: #fff; }
+
+button.dark { background: #0a0a0a; color: #fff; }
+button.dark:hover { background: #fff; color: #0a0a0a; }
+
+/* ---------- Filters ---------- */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 20px;
+    background: #f4f4f4;
+    border-bottom: 1px solid #0a0a0a;
+}
+#filters input { flex: 1; min-width: 200px; }
+
+#summary { padding: 8px 20px; font-weight: bold; }
+#message { padding: 0 20px 6px; font-weight: bold; }
+#message:empty { padding: 0; }
+
+/* ---------- Map (grayscale tiles) ---------- */
+#map {
+    height: 62vh;
+    min-height: 380px;
+    border-top: 1px solid #0a0a0a;
+    border-bottom: 1px solid #0a0a0a;
+}
+.leaflet-tile-pane { filter: grayscale(1) contrast(1.05); }
+
+/* ---------- Dialogs ---------- */
+dialog {
+    border: 2px solid #0a0a0a;
+    padding: 20px;
+    width: 360px;
+    max-width: 94vw;
+}
+dialog::backdrop { background: rgba(0, 0, 0, 0.5); }
+dialog h3 { margin-top: 0; }
+dialog label { display: block; margin: 8px 0; font-size: 13px; }
+dialog input, dialog select, dialog textarea {
+    display: block;
+    width: 100%;
+    margin-top: 3px;
+}
+.row { display: flex; gap: 8px; margin-top: 12px; }
+.hint { font-size: 12px; color: #555; }
+
+/* ---------- Legend and popups ---------- */
+.legend {
+    background: #fff;
+    padding: 8px 10px;
+    border: 1px solid #0a0a0a;
+    font-size: 12px;
+    line-height: 1.6;
+}
+.leaflet-popup-content-wrapper { border-radius: 0; border: 1px solid #0a0a0a; }
+.leaflet-popup-tip { border: 1px solid #0a0a0a; }
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+    border: 1px solid #000;
+}
+.dot.high   { background: #d62839; }
+.dot.medium { background: #f4a300; }
+.dot.low    { background: #2a9d68; }
+.dot.thick  { background: #fff; border-width: 3px; }
+.dot.dashed { background: #fff; border: 2px dashed #000; }
+.dot.thin   { background: #fff; border-width: 1px; }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road and Traffic Issue Reporting</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Road and Traffic Issue Reporting</h1>
+        <p>Islamabad &amp; Rawalpindi &ndash; Web GIS Assignment 2</p>
+    </header>
+
+    <div id="filters">
+        <input id="search" type="text" placeholder="Search title or description">
+        <select id="typeFilter">
+            <option value="">All types</option>
+            <option>Pothole</option>
+            <option>Broken Streetlight</option>
+            <option>Traffic Jam</option>
+            <option>Road Damage</option>
+            <option>Flooding</option>
+        </select>
+        <select id="statusFilter">
+            <option value="">All statuses</option>
+            <option>Open</option>
+            <option>In Progress</option>
+            <option>Resolved</option>
+        </select>
+        <button id="resetBtn">Reset</button>
+        <button id="addBtn" class="dark">+ Report issue</button>
+    </div>
+
+    <div id="summary">Loading...</div>
+    <div id="message"></div>
+
+    <div id="map"></div>
+
+    <!-- Add / edit dialog -->
+    <dialog id="issueDialog">
+        <form id="issueForm">
+            <h3 id="formTitle">Report an issue</h3>
+            <label>Title <input id="title" maxlength="100" required></label>
+            <label>Type
+                <select id="issue_type">
+                    <option>Pothole</option>
+                    <option>Broken Streetlight</option>
+                    <option>Traffic Jam</option>
+                    <option>Road Damage</option>
+                    <option>Flooding</option>
+                </select>
+            </label>
+            <label>Severity
+                <select id="severity">
+                    <option>Low</option>
+                    <option selected>Medium</option>
+                    <option>High</option>
+                </select>
+            </label>
+            <label>Status
+                <select id="status">
+                    <option>Open</option>
+                    <option>In Progress</option>
+                    <option>Resolved</option>
+                </select>
+            </label>
+            <label>Description <textarea id="description" rows="3"></textarea></label>
+            <p id="coords" class="hint"></p>
+            <div class="row">
+                <button type="submit" class="dark">Save</button>
+                <button type="button" id="issueCancel">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
